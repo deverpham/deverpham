@@ -1,0 +1,142 @@
+/*import normalize*/
+@import "mt.min.scss";
+@import "normalize.scss";
+.centerli {
+  margin-left:40%;
+  & .itemtext {
+    opacity: 0;
+  }
+}
+.fixed {
+position: fixed !important;
+margin-left: !important;
+padding-left:0 !important;
+z-index: 1000 !important;
+
+}
+.ahihi {
+  height: 44px;;
+}
+.leftmenuedit{
+  margin-left:-12px !important;
+}
+.margin-left-20 {
+  margin-left:20px !important;
+}
+
+ .v-center {
+    position: absolute;
+    top:0;left:0;right:0;bottom:0; margin:auto;
+    height: 56px !important;
+  }
+.toggleIcon {
+  font-size: 60px !important;
+}
+#title {
+  text-decoration: underline !important;
+  letter-spacing: 4px;
+}
+.left-menu {
+  background: #413F41;
+  height: 100vh;;
+  position: relative;
+  & > #toggle-menu{
+    position: absolute !important;
+    top:0 !important;
+    left:87% !important;
+    opacity: 0.9;
+    background:  #4E838F !important;
+    transition: all 0.5s;
+    &:hover {
+      opacity: 1;
+      background: #65618F !important;
+    }
+  }
+  & > ul {
+      line-height: 40px;
+      color:#F3F1F3;
+      & > li {
+        & > .iconcat {
+
+          transition: all 0.5s;
+        }
+        cursor: pointer;
+        position: relative;
+        & > .itemtext {
+          transition: all 0.5s;
+          position: absolute;
+          top:8%;
+        }
+        &:hover {
+          & > .itemtext {
+            opacity: 0;
+          }
+          & > .iconcat {
+            & svg {
+              height: 60px;
+              width: 60px;
+            }
+            margin-left:37%;;
+          }
+        }
+      }
+  }
+}
+nav {
+  background: #413F41 !important;
+}
+#post {
+  &   svg {
+    height: 60px;
+    width: 60px;
+  }
+  & > .post-title {
+    position: relative;
+    & .post-name {
+
+
+    position: absolute;
+    top:20%;
+    color: #EA2E49;
+  }
+}
+& > time {
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 17px;
+}
+& .post-noidung {
+  border-left:2px solid #77C4D3;
+  padding-left:10px;
+}
+& .post-view,& .post-like  {
+  font-size:40px;
+  color :#2F343B;
+}
+& .textlikeview {
+  font-size:30px;
+  position: absolute;
+  top:7%;
+}
+& .textlikeviewparent {
+  position: relative;
+}
+}
+.collapse {
+
+  & .itemtext {
+    opacity: 0;
+  }
+  & .left-menu {
+    width: auto !important;
+    transition: width 0.5s;
+  }
+  & #toggle-menu {
+  top: 78% !important;
+  left:50% !important;
+  }
+}
+.collapse-content {
+  transition: all 0.5s;
+  margin-left :6% !important;
+}

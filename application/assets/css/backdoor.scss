@@ -1,0 +1,12 @@
+@import "mt.min.scss";
+@import "normalize.scss";
+.menu {
+  background: red;
+  & ul  {
+    list-style: circle;
+  & li {
+    width: 100%;
+    cursor: pointer;
+  }
+  }
+}
