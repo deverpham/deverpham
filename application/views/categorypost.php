@@ -30,7 +30,9 @@
               $stringCut = substr($row['content'], 0, 1000);
               $stringCut=$stringCut.' ...';
               $doc = new DOMDocument();
+              $internalErrors = libxml_use_internal_errors(true);
               $doc->loadHTML('<?xml version="1.0" encoding="UTF-8"?>'.$stringCut);
+              libxml_use_internal_errors($internalErrors);
               $coverthtml = $doc->saveHTML();
               }
               echo $coverthtml;
