@@ -2,13 +2,13 @@
 global $config;
   $config= array(
     'lang' => 'vi',
-    'url'   =>'http://192.168.0.101',
+    'url'   =>'http://128.199.209.156',
     'csrf_key' =>'a061cf5c134cb3a19fc93b47cee7d6cb3c2f7d9d7bd8bd301eb8b055f05d0dfb',
     'csrf_name' =>'e4dcea7046b372e8ed64a542003440d9',
     'databaseinfo'                    =>array(
                                             'host' =>'localhost',
                                             'username' =>'root',
-                                            'password' => 'thinh123123',
+                                            'password' => 'thinh0982540465',
                                             'database'  =>'deverpham',
                                             'type' =>null
                                           ),
