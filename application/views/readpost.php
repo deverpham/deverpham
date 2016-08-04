@@ -1,9 +1,10 @@
-<?php $icon=''; ?>
+<?php $icon=''; $idpost=''; ?>
 <!DOCTYPE html>
 <html <?php f_lang(); ?>>
   <head>
     <?php f_meta(); ?>
     <?php f_head($data['title'],$data['css'],$data['js']); ?>
+    <script src="/application/assets/js/hl.js"></script>
   </head>
   <body>
 
@@ -17,7 +18,7 @@
                 <div class="row z-depth-2 margin-left-20" id='post'>
                     <h4 class='col s12 post-title'>
                       <span class='postcaticon'>
-                        <?php $catid=$row['idcat'];
+                        <?php $catid=$row['idcat']; $idpost=$row['id'];
 
                         $array = array (
                                               'icon'
@@ -35,7 +36,7 @@
                     </h4>
                     <time class='col s12'><?php echo $row['time']; ?></time>
 
-                      <div class="col s3">
+                      <div class="col s4">
 
                         <div class="col s6 textlikeviewparent">
                           <span ><i class='material-icons post-view'>visibility</i> <span class='textlikeview'>: <?php echo $row['views'] ?></span></span>
@@ -47,11 +48,21 @@
                     <div class="col s12 post-content ">
                       <div class="post-noidung">
                               <?php
+
                               echo $row['content'];
                               ?>
                   </div>
                     </div>
-
+                    <div class="col s12 like-box ">
+                      <div class="card-panel cyan lighten-5">
+                        <span class='center-align' style='font-size:25px !important; color:#334D7A;' >Bài viết có giúp được gì cho bạn không? </span>
+                        <a likeid='<?php echo $idpost; ?>' class="btn-floating btn-large waves-effect waves-light green center-align" onclick="like(this)"><i class="material-icons">thumb_up</i></a>
+                      </div>
+                    </div>
+                    <div class="col s12">
+                      <p>
+                      </p>
+                    </div>
                 </div>
                 <?php } ?>
                 <div class="row z-depth-2 margin-left-20" id='postincategory'>

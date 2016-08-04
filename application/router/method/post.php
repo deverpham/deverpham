@@ -439,13 +439,35 @@ $listrouter = array (
                           );
                             $result = md_get($mysql,$array,$search,'post');
                             if(gettype($result)=='string') {
-                              echo '<h1>Không Có Post</h1>';
+                            echo "<div class='card-panel'>
+                                    <h1 class='center-align truncate '>Chưa Có Bài Viết Nào</h1>
+                                    </div>";
                             } else {
                               $data['post']=$result;
                               $data['mysql'] =$mysql;
                               _loadView('categorypost',$data);
                             }
                           }
+},
+'/readpost/likepost' =>function() {
+      if(!isset($_POST['id'])) {
+        exit();
+      }
+      else {
+            _loadModule('database');
+            _loadModel('database');
+            $mysql = new database();
+            $curentlike = md_get($mysql, array (
+                                          'vote'
+            ),                                            array (
+                                          'id' =>$_POST['id']
+          ),  'post');
+          if(gettype($curentlike)!='string') {
+            $like = $curentlike[0]['vote']+1;
+            md_edit($mysql, array ( 'vote'=> $like),array('id' => $_POST['id']),'post');
+          }
+          $mysql->disconnect();
+      }
 }
 );
 _routing($listrouter);

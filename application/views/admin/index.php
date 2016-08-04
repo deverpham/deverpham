@@ -3,8 +3,10 @@
 <html <?php f_lang(); ?>>
   <head>
     <?php f_meta(); ?>
+
     <?php f_head($data['title'],$data['css'],$data['js']); ?>
     <script src="//cdn.ckeditor.com/4.5.10/full-all/ckeditor.js"></script>
+    <script src="/application/assets/js/hl.js"></script>
   </head>
   <body>
 

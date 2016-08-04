@@ -56,6 +56,9 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
       $('time').each(function() {
         time = $(this).text();
         moment.locale('vi');

@@ -125,6 +125,12 @@ $listrouter =array(
                           _loadView('error/404page');
                         }
                         else {
+                          $view=$result[0]['views']+1;
+                          md_edit($mysql,array(
+                            'views' => $view
+                          ),array(
+                            'id'=>$id
+                          ),'post');
                           $data = array(
                             'title' =>$_GET['name'],
                             'css' => array (
@@ -138,9 +144,6 @@ $listrouter =array(
                               )
                           );
                           _loadModule('frontend');
-                          _loadModule('database');
-                          _loadModel('database');
-                         $mysql = new database();
                          $data['category']=$mysql->query('SELECT *
                                                                               FROM   `category`
                                                                               ');
@@ -148,6 +151,7 @@ $listrouter =array(
                           $data['post']=$result;
                           _loadView('readpost',$data);
                         }
+                        $mysql->disconect();
                     }
   }
 );

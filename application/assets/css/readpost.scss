@@ -1,6 +1,12 @@
 /*import normalize*/
 @import "mt.min.scss";
 @import "normalize.scss";
+@import "hlstyle/atelier-dune-dark.scss";
+
+.alert-like {
+  background:#2F2933;
+  font-size:25px;
+}
 .fixed {
 position: fixed !important;
 margin-left: !important;

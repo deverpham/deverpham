@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
    $('.menu li ').click(function() {
      var id = $(this).attr('id');
      var target="[menuid='"+id+"']";
@@ -109,6 +110,7 @@ $('button.delete').click(function() {
 });
 //delete button/
 $('button.edit').click(function() {
+     hljs.initHighlightingOnLoad();
     var data=$('.content-data .listcategory').html();
     var listcat = data.split('-');
     listcat.splice(listcat.length-1,1);
@@ -164,7 +166,11 @@ $('button.edit').click(function() {
 });
 
 //for post menu
-CKEDITOR.replace( 'editor1' );
+
+CKEDITOR.replace( 'editor1', {
+  customConfig: '/application/assets/js/config.js'
+});
+
 
 $('#submitpost').click(function() {
   data=CKEDITOR.instances.editor1.getData();

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
   $('ul.tabs').tabs('select_tab','newpost');
    $(".button-collapse").sideNav();
    $('time').each(function() {
@@ -40,4 +43,16 @@ function  routercat(category) {
                       $('.right-content').html(data);
                     }
    });
+}
+function like(event) {
+  $(event).remove();
+  var idpost = event.getAttribute('likeid');
+  var data  = {
+     id : idpost
+  }
+  $.post('/readpost/likepost',data,function(data,success) {
+          if(success) {
+              Materialize.toast('Cảm ơn bạn! Mình sẽ phát huy', 2000, 'alert-like');
+          }
+  });
 }

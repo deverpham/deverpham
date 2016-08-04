@@ -23,12 +23,12 @@ require_once(App.'/core/config.php');
               else
                 $data.=file_get_contents(App.'/assets/css/'.$value.'.min.css');
           }
-          print "\t<style>\n{$data}\t</style>\n";
+          print "\t<style rel='stylesheet' type='text/css'>\n{$data}\t</style>\n";
         };
         $jsdata=null;
         if($js) {
           foreach  ($js as $vl) {
-            $jsdata.=file_get_contents(App.'/assets/js/'.$vl.'.js');
+            $jsdata.=file_get_contents(App.'/assets/js/built/'.$vl.'.js');
           }
         }
         print "\t<script>\n{$jsdata}\t</script>\n";
