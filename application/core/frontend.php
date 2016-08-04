@@ -28,7 +28,7 @@ require_once(App.'/core/config.php');
         $jsdata=null;
         if($js) {
           foreach  ($js as $vl) {
-            $jsdata.=file_get_contents(App.'/assets/js/built/'.$vl.'.js');
+            $jsdata.=file_get_contents(App.'/assets/js/'.$vl.'.js');
           }
         }
         print "\t<script>\n{$jsdata}\t</script>\n";

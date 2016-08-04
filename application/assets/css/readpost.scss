@@ -86,7 +86,7 @@ nav {
   background: #413F41 !important;
 }
 #post {
-  &   svg {
+  &   .post-title >span > svg {
     height: 60px;
     width: 60px;
   }
@@ -142,4 +142,7 @@ nav {
 .collapse-content {
   transition: all 0.5s;
   margin-left :6% !important;
+}
+.right-content {
+  word-break: break-all !important;
 }

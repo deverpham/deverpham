@@ -7,5 +7,17 @@ CKEDITOR.editorConfig = function( config ) {
 config.uiColor = '#AADC6E';
 config.extraPlugins = 'codesnippet';
 config.codeSnippet_theme = 'pojoaque';
+config.allowContent=true;
+config.extraAllowedContent=[
+  "svg[*]",
+  'script',
+  'defs[*]',
+  'g[*]',
+  'path[*]',
+  'rect[*]',
+  'title[*]',
+  '*[*]'
+];
+
 
 };
